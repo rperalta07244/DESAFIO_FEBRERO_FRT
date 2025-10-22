@@ -11,5 +11,5 @@ En segundo lugar: a modo de utilizar pruebas funcionales, elegí las "UAT" y "Sm
     5. Subscripcion a Newsletter
     6. Unirse a comunidad de Discord
 
-En tercer lugar elegiria tecnica de prueba de caja negra para evaluar las funcionalidades prioritarias:
-    1. Login: Utilizaria un tabla de desiciones para
+En tercer lugar elegiria tecnica de prueba de caja negra para evaluar las funcionalidades prioritarias.
+    
