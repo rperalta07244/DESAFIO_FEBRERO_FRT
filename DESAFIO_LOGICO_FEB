@@ -1,15 +1,72 @@
 https://miro.com/app/board/uXjVJ2Ur6G8=/?share_link_id=502783928894
 
 En primer lugar realicé un mindmap gral del sitio web para ubicar los 
-elementos y empezar a tener una idea de las del obkjetivo y funcionalidades basicas del sitio
+elementos y empezar a tener una idea de las del objetivo y funcionalidades basicas del sitio
 
 En segundo lugar: a modo de utilizar pruebas funcionales, elegí las "UAT" y "Smoke test" y elegí como funcionalidades prioritarias:
     1. Login
     2. Subscripcion a "Academia"
-    3. Seleccion y compra de cursos
-    4. Descarga de contenido gratuito
-    5. Subscripcion a Newsletter
-    6. Unirse a comunidad de Discord
+    3. Descarga de contenido gratuito
+    4. Unirse a comunidad de Discord
 
-En tercer lugar elegiria tecnica de prueba de caja negra para evaluar las funcionalidades prioritarias.
-    
+En tercer lugar redactaria los casos de prueba para cada una de las funcionalidades prioritarias y 
+elegiria tecnica de prueba de caja negra para evaluarlas.
+
+CASOS DE PRUEBA Y RESOLUCION
+
+-----Caso de prueba 1:
+  Como usuario quiero poder a traves del sitio ingresar a mi cuenta con un nombre de usuario y contraseña validos.
+  Para poder acceder a los cursos y las distintas funcionalidades de un usuario registrado
+
+  Criterios de aceptacion:
+   1- a traves del homepage, ingresar a la opcion ACCEDER, en la barra de navegacion
+   2- Apertura de nueva ventana o pop-up, donde ingresa usuario y contraseña
+   3- Ingreso de usuario y contraseña validos.
+   4- Ingreso a pagina personal del usuario
+
+Resolucion: Utilizaria como tecnica de caja negra, una tabla de desiciones para consignar las distintas combinaciones 
+de usuario y contraseña (valido, invalido, blank por ejemplo)
+
+-----Caso de prueba 2:
+   Como usuario quisiera poder subscribirme en la Academia para obtener acceso completo a los cursos disponibles.
+  Criterios de Aceptacion:
+   1- A traves del home page, ingresar a la pestaña "Academia"
+   2- Interactura con el boton "Empezar hoy"
+   3- Apertura de nueva ventana que redireccione a carrito de compras donde se enlisten los productos elegidos ("ACADEMIA")
+   4- Formulario de compra online con tarjeta de credito
+   5- Confirmacion de compra a traves de nueva ventana
+   6- Acceso a los contenidos de la Academia
+
+   Resolucion: Utilizaria como tecnica de caja negra, analisis de valor limite al momento de ingresar los datos de la 
+   tarjeta (nombre, nro, fecha vto, cvv), tambien prueba de transicion de estados (al despalzarse por distintos estado del sitio: 
+   logout --> login --> pantalla de academia -->pantalla de confirmacion de compra --> usuario sub a la academia con acceso a cursos)
+   El objetivo de esta prueba seria intentar encontrar happy y sad path en el proceso. 
+
+-----Caso de prueba 3:
+   Como usuario quisiera descargar el contendio gratuito de la pagina sin la necesidad de estar registrado o subscripto.
+   Criterios de Aceptacion:
+   1- A traves del home page ir a la seccion "Descarga gratuita"
+   2- Llenar el campo requerido (email valido)
+   3- Interactuar con boton "Accede ya"
+   4- apertura de ventana o pop-up que confirme la operacion
+   5- Descarga del contenido en al direccion de mail especificada
+
+   Resolucion: Utilizaria como tecnica de caja negra: particion de equivalencias (consignando email de distintas plataformas
+   como google, yahoo, live) y tabla de desiciones ingresando distintas conbinaciones de email (validos, no validos, blank, 
+   con caracteres especiales, numeros) para evaluar la respuesta de la funcionalidad.
+
+
+-----Caso de prueba 4:
+   Como usuario REGISTRADO quisiera poder unirme a la comunidad de discord.
+   Para poder compartir mis proyectos y recibir correcciones.
+   Criterios de Aceptacion:
+   1- a traves del homepage, ingresar a la opcion ACCEDER, en la barra de navegacion
+   2- Apertura de nueva ventana o pop-up, donde ingresa usuario y contraseña
+   3- Ingreso de usuario y contraseña validos.
+   4- Ingreso a pagina personal del usuario
+   5- Interactuar con boton "Unirme a comunidad de Discord"
+   6- Pop-up o nueva ventana para asociar y validar credenciales de FRT a Discord
+
+   Resolucion: Utilizaria como tecnica una prueba de transicion de estados para observar que las acciones
+  de ACCEDER, UNIRME A COMUNIDAD y ASOCIAR/VALIDAR CREDENCIALES obtengan los resultados esperados.  
+
