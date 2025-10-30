@@ -1,3 +1,5 @@
+
+MINDMAP 
 https://miro.com/app/board/uXjVJ2Ur6G8=/?share_link_id=502783928894
 
 En primer lugar realicé un mindmap gral del sitio web para ubicar los 
@@ -8,6 +10,7 @@ En segundo lugar: a modo de utilizar pruebas funcionales, elegí las "UAT" y "Sm
     2. Subscripcion a "Academia"
     3. Descarga de contenido gratuito
     4. Unirse a comunidad de Discord
+    5. Compra de cursos individuales 
 
 En tercer lugar redactaria los casos de prueba para cada una de las funcionalidades prioritarias y 
 elegiria tecnica de prueba de caja negra para evaluarlas.
@@ -18,7 +21,14 @@ CASOS DE PRUEBA Y RESOLUCION
   Como usuario quiero poder a traves del sitio ingresar a mi cuenta con un nombre de usuario y contraseña validos.
   Para poder acceder a los cursos y las distintas funcionalidades de un usuario registrado
 
-  Criterios de aceptacion:
+ Criterios de aceptacion:
+  1. Funcionalidad de login con usuario y contraseña validos
+
+  Datos de entrada:
+  1. Usuario y contraseña validos (user:Rodrigop passw:123456)
+
+
+Pasos:
    1- a traves del homepage, ingresar a la opcion ACCEDER, en la barra de navegacion
    2- Apertura de nueva ventana o pop-up, donde ingresa usuario y contraseña
    3- Ingreso de usuario y contraseña validos.
@@ -29,11 +39,23 @@ de usuario y contraseña (valido, invalido, blank por ejemplo)
 
 -----Caso de prueba 2:
    Como usuario quisiera poder subscribirme en la Academia para obtener acceso completo a los cursos disponibles.
-  Criterios de Aceptacion:
+
+Criterios de aceptacion:
+  1. Funcionalidad de login con usuario y contraseña validos
+  2. Listado de productos (cursos individuales y academia)
+  3. Funcionalidad de carrito de compras para agregar y eliminar productos 
+  4. Funcionalidad de transacción con trajeta de credito
+
+  Datos de entrada:
+  1. Usuario y contraseña validos (user:Rodrigop passw:123456)
+  2. Datos de trajeta de credito validos ( nro xxxxxxxxxxxxxxx vto xx/xx cvv xxx)
+
+
+  Pasos:
    1- A traves del home page, ingresar a la pestaña "Academia"
    2- Interactura con el boton "Empezar hoy"
    3- Apertura de nueva ventana que redireccione a carrito de compras donde se enlisten los productos elegidos ("ACADEMIA")
-   4- Formulario de compra online con tarjeta de credito
+   4-  Completar formulario de compra online con tarjeta de credito
    5- Confirmacion de compra a traves de nueva ventana
    6- Acceso a los contenidos de la Academia
 
@@ -44,7 +66,14 @@ de usuario y contraseña (valido, invalido, blank por ejemplo)
 
 -----Caso de prueba 3:
    Como usuario quisiera descargar el contendio gratuito de la pagina sin la necesidad de estar registrado o subscripto.
+
+
    Criterios de Aceptacion:
+   1. Listado de productos gratuitos
+   2. Enlace de descarga de productos
+
+
+Pasos
    1- A traves del home page ir a la seccion "Descarga gratuita"
    2- Llenar el campo requerido (email valido)
    3- Interactuar con boton "Accede ya"
@@ -59,7 +88,18 @@ de usuario y contraseña (valido, invalido, blank por ejemplo)
 -----Caso de prueba 4:
    Como usuario REGISTRADO quisiera poder unirme a la comunidad de discord.
    Para poder compartir mis proyectos y recibir correcciones.
-   Criterios de Aceptacion:
+
+Criterios de aceptacion:
+  1. Funcionalidad de login con usuario y contraseña validos
+  2. Funcionalidad de enlace y validación de credenciales con Discord
+ 
+
+  Datos de entrada:
+  1. Usuario y contraseña validos (user:Rodrigop passw:123456)
+  2. Usuario y contraseña validos de discord (user:RodrigoDicord passw:123456Discord)
+
+
+ Pasos 
    1- a traves del homepage, ingresar a la opcion ACCEDER, en la barra de navegacion
    2- Apertura de nueva ventana o pop-up, donde ingresa usuario y contraseña
    3- Ingreso de usuario y contraseña validos.
@@ -70,3 +110,33 @@ de usuario y contraseña (valido, invalido, blank por ejemplo)
    Resolucion: Utilizaria como tecnica una prueba de transicion de estados para observar que las acciones
   de ACCEDER, UNIRME A COMUNIDAD y ASOCIAR/VALIDAR CREDENCIALES obtengan los resultados esperados.  
 
+
+
+-----Caso de prueba 5:
+   Como usuario registrado quisiera poder comprar y obtener acceso a cursos individuales,.disponibles en el sitio
+
+Criterios de aceptacion:
+  1. Funcionalidad de login con usuario y contraseña validos
+  2. Listado de productos (cursos individuales)
+  3. Funcionalidad de carrito de compras para agregar y eliminar productos 
+  4. Funcionalidad de transacción con trajeta de credito
+
+  Datos de entrada:
+  1. Usuario y contraseña validos (user:Rodrigop passw:123456)
+  2. Datos de trajeta de credito validos ( nro xxxxxxxxxxxxxxx vto xx/xx cvv xxx)
+
+
+  Pasos:
+   1- A traves del home page, ingresar a la pestaña "Cursos"
+   2- En el vurso elegido, interactura con el boton "Ver curso"
+   3- Apertura de nueva ventana que redireccione a la pagina principal del curso
+   4- Interactuar con boton "Comprar"
+   5- Redireccion a carrito de comprar para ver productos seleccionados
+   6-  Completar formulario de compra online con tarjeta de credito
+   7- Confirmacion de compra a traves de nueva ventana
+   8- Acceso a los contenidos del curso
+
+   Resolucion: Utilizaria como tecnica de caja negra, analisis de valor limite al momento de ingresar los datos de la 
+   tarjeta (nombre, nro, fecha vto, cvv), tambien prueba de transicion de estados (al despalzarse por distintos estado del sitio: 
+  login --> pantalla del Curso -->pantalla de confirmacion de compra -->usuario registro con acceso al panel "productos"
+   El objetivo de esta prueba seria intentar encontrar happy y sad path en el proceso. 
